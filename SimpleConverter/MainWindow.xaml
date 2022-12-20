@@ -1,0 +1,22 @@
+﻿<Window x:Class="SimpleConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleConverter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <local:BoolToVisibilityConverter x:Key="converter"/>
+        </Grid.Resources>
+        <Button x:Name="State1" Content="False" Width="100" Margin="530,60,70,324"/>
+        <Button x:Name="State2" Content="True"  Width="100" Margin="88,60,512,324"/>
+        <Button x:Name="State3" Content="" Height="50" Width="200" Margin="188,190,212,194"
+               Visibility="{Binding ElementName=State2, Path=IsMouseOver,Converter={StaticResource converter}}" />
+        <StackPanel Orientation="Horizontal" Margin="150">
+            <TextBlock Text="Visibility=" FontSize="30"/>
+            <TextBlock Text="{Binding Visibility, ElementName=State3}" FontSize="30"/>
+        </StackPanel>
+    </Grid>
+</Window>
