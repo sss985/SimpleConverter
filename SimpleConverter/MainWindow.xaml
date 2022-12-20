@@ -10,7 +10,7 @@
         <Grid.Resources>
             <local:BoolToVisibilityConverter x:Key="converter"/>
         </Grid.Resources>
-        <Button x:Name="State1" Content="False" Width="100" Margin="530,60,70,324"/>
+        <Button x:Name="State1" Content="False" Width="110" Margin="530,60,70,324"/>
         <Button x:Name="State2" Content="True"  Width="100" Margin="88,60,512,324"/>
         <Button x:Name="State3" Content="" Height="50" Width="200" Margin="188,190,212,194"
                Visibility="{Binding ElementName=State2, Path=IsMouseOver,Converter={StaticResource converter}}" />
